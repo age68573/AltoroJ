@@ -32,7 +32,7 @@ java --version'''
               sh '''mvn --version
                 echo ${cov-idir}
                 echo "start Cpature ....."
-                cov-build --dir ${cov-idir} mvn clean complie
+                cov-build --dir ${cov-idir} mvn clean compile
                 echo "list capture ....."
                 coverity list
                 echo "start analyze ....."
@@ -66,8 +66,7 @@ java --version'''
 
     stage('CodeDX') {
       steps {
-        sh "echo 123"
-        //step([$class: 'CodeDxPublisher', analysisName: 'Build #${BUILD_NUMBER}', analysisResultConfiguration: [failureOnlyNew: false, failureSeverity: 'None', numBuildsInGraph: 0, policyBreakBuildBehavior: 'NoAction', unstableOnlyNew: false, unstableSeverity: 'None'],baseBranchName: 'main', key: 'api-key:hkZpD1V2WEpsMjC-cGjr5C24B2HDtvbp9FR4HQ5f', projectId: '5', selfSignedCertificateFingerprint: '', sourceAndBinaryFiles: '**',targetBranchName: 'blueocean', url: 'http://10.107.85.95:81/codedx'])
+        sh 'echo 123'
       }
     }
 
