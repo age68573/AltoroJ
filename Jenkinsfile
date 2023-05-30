@@ -31,12 +31,12 @@ java --version'''
             withCoverityEnvironment(coverityInstanceUrl: 'http://10.107.85.94:8080', createMissingProjectsAndStreams: true, credentialsId: 'Coverity94', projectName: '${COVERITY_PROJECT}', streamName: '${COVERITY_STREAM}', viewName: 'Outstanding Issues') {
               sh '''mvn --version
                 echo ${cov-idir}
-                echo "start Cpature ....."
+                echo "start cov-build ....."
                 cov-build --dir ${cov-idir} mvn clean compile
-                echo "list capture ....."
-                coverity list
+                echo "start cov-capture ....."
+                cov-capture --dir idir --source-dir .
                 echo "start analyze ....."
-                cov-analyze --dir ${cov-idir} --source-dir .
+                cov-analyze --dir idir --all --disable-spotbugs --webapp-security -j auto --enable-audit-mode
                 echo ${COV_URL}
                 cov-commit-defects --dir ${cov-idir} --url ${COV_URL} --stream ${COV_STREAM} --auth-key-file ${COV_AUTH_KEY_PATH}
               '''
