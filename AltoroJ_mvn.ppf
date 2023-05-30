@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project default_configuration_name="Configuration 1" file_extension_set_name="java" jsp_compiler_info_name="Tomcat 8" jsp_compiler_type="13" language_type="2" ltd_name="java" name="AltoroJ_mvn" version="10.0.7" web_context_root_path=".\target\AltoroJ_mvn.war">
+	<Configuration class_path=".\target\classes;C:\Windows\System32\config\systemprofile\.m2\repository\javax\servlet\servlet-api\2.4\servlet-api-2.4.jar;.\Log4AltoroJ.jar;C:\Windows\System32\config\systemprofile\.m2\repository\commons-lang\commons-lang\2.5\commons-lang-2.5.jar;C:\Windows\System32\config\systemprofile\.m2\repository\commons-codec\commons-codec\1.6\commons-codec-1.6.jar;." name="Configuration 1"/>
+	<Source exclude="false" path=".\src\main\java" web="false"/>
+	<Source exclude="false" path=".\AltoroJ_mvn_staging" web="true"/>
+	<ProjectScanSettings/>
+</Project>

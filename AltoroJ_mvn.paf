@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Application name="AltoroJ_mvn" version="10.0.7">
+	<Projects>
+		<Project ltd_name="java" path=".\AltoroJ_mvn.ppf"/>
+	</Projects>
+	<StringPool>
+		<String id="1"/>
+		<String id="2" value="AltoroJ_mvn"/>
+		<String id="3" value="Temp#14@0 . javax.servlet.jsp.JspWriter.print ( Temp#15@0 )"/>
+		<String id="4" value="Temp#15@0"/>
+		<String id="5" value="Vulnerability.CrossSiteScripting"/>
+		<String id="6" value="error"/>
+		<String id="7" value="error = request . javax.servlet.ServletRequest.getAttribute ( &quot;loginError&quot; )"/>
+		<String id="8" value="error = request . javax.servlet.http.HttpServletRequest.getSession() . javax.servlet.http.HttpSession.getAttribute ( &quot;message&quot; )"/>
+		<String id="9" value="javax.servlet.ServletRequest"/>
+		<String id="10" value="javax.servlet.ServletRequest.getAttribute"/>
+		<String id="11" value="javax.servlet.ServletRequest.getAttribute(java.lang.String):java.lang.Object"/>
+		<String id="12" value="javax.servlet.ServletRequest.getParameter"/>
+		<String id="13" value="javax.servlet.ServletRequest.getParameter(java.lang.String):java.lang.String"/>
+		<String id="14" value="javax.servlet.http.HttpSession"/>
+		<String id="15" value="javax.servlet.http.HttpSession.getAttribute"/>
+		<String id="16" value="javax.servlet.http.HttpSession.getAttribute(java.lang.String):java.lang.Object"/>
+		<String id="17" value="javax.servlet.jsp.JspWriter"/>
+		<String id="18" value="javax.servlet.jsp.JspWriter.print"/>
+		<String id="19" value="javax.servlet.jsp.JspWriter.print(java.lang.String):void"/>
+		<String id="20" value="org.apache.jsp.admin.admin_jsp"/>
+		<String id="21" value="org.apache.jsp.admin.admin_jsp._jspService"/>
+		<String id="22" value="org.apache.jsp.admin.admin_jsp._jspService(javax.servlet.http.HttpServletRequest;javax.servlet.http.HttpServletResponse):void"/>
+		<String id="23" value="org.apache.jsp.admin.login_jsp"/>
+		<String id="24" value="org.apache.jsp.admin.login_jsp._jspService"/>
+		<String id="25" value="org.apache.jsp.admin.login_jsp._jspService(javax.servlet.http.HttpServletRequest;javax.servlet.http.HttpServletResponse):void"/>
+		<String id="26" value="org.apache.jsp.bank.queryxpath_jsp"/>
+		<String id="27" value="org.apache.jsp.bank.queryxpath_jsp._jspService"/>
+		<String id="28" value="org.apache.jsp.bank.queryxpath_jsp._jspService(javax.servlet.http.HttpServletRequest;javax.servlet.http.HttpServletResponse):void"/>
+		<String id="29" value="out . javax.servlet.jsp.JspWriter.print ( error )"/>
+		<String id="30" value="request . javax.servlet.ServletRequest.getParameter ( &quot;query&quot; )"/>
+		<String id="31" value="return value"/>
+	</StringPool>
+	<FilePool>
+		<File id="1" value=".\AltoroJ_mvn_staging\admin\admin.jsp"/>
+		<File id="2" value=".\AltoroJ_mvn_staging\admin\login.jsp"/>
+		<File id="3" value=".\AltoroJ_mvn_staging\bank\queryxpath.jsp"/>
+	</FilePool>
+	<SitePool>
+		<Site caller="25" cn="9" cxt="7" file_id="2" id="1" language_type="2" ln="23" method="10" ord="1" sig="11"/>
+		<Site caller="28" cn="9" cxt="30" file_id="3" id="2" language_type="2" ln="16" method="12" ord="1" sig="13"/>
+		<Site caller="22" cn="14" cxt="8" file_id="1" id="3" language_type="2" ln="39" method="15" ord="1" sig="16"/>
+		<Site caller="22" cn="17" cxt="29" file_id="1" id="4" language_type="2" ln="42" method="18" ord="1" sig="19"/>
+		<Site caller="25" cn="17" cxt="29" file_id="2" id="5" language_type="2" ln="27" method="18" ord="1" sig="19"/>
+		<Site caller="28" cn="17" cxt="3" file_id="3" id="6" language_type="2" ln="16" method="18" ord="1" sig="19"/>
+		<Site caller="1" cn="20" cxt="1" file_id="1" id="7" language_type="2" ln="39" method="21" ord="1" sig="22"/>
+		<Site caller="1" cn="23" cxt="1" file_id="2" id="8" language_type="2" ln="23" method="24" ord="1" sig="25"/>
+		<Site caller="1" cn="26" cxt="1" file_id="3" id="9" language_type="2" ln="16" method="27" ord="1" sig="28"/>
+	</SitePool>
+	<TaintPool>
+		<Taint arg="0" arg_name="31" dir="1" id="1" site_id="1" trace_type="2"/>
+		<Taint arg="0" arg_name="31" dir="1" id="2" site_id="2" trace_type="2"/>
+		<Taint arg="0" arg_name="31" dir="1" id="3" site_id="3" trace_type="2"/>
+		<Taint arg="2" arg_name="6" dir="2" id="4" site_id="4" trace_type="3"/>
+		<Taint arg="2" arg_name="6" dir="2" id="5" site_id="5" trace_type="3"/>
+		<Taint arg="2" arg_name="4" dir="2" id="6" site_id="6" trace_type="3"/>
+		<Taint arg="-1" arg_name="1" dir="0" id="7" site_id="7" trace_type="1"/>
+		<Taint arg="-1" arg_name="1" dir="0" id="8" site_id="8" trace_type="1"/>
+		<Taint arg="-1" arg_name="1" dir="0" id="9" site_id="9" trace_type="1"/>
+	</TaintPool>
+	<FindingDataPool>
+		<FindingData ao_id="31" conf="1" id="1" project_name="2" prop_ids="537,540,599,605,845" rec_id="378" sev="0" site_id="4" vtype="5"/>
+		<FindingData ao_id="31" conf="1" id="2" project_name="2" prop_ids="537,540,599,605,845" rec_id="378" sev="0" site_id="5" vtype="5"/>
+		<FindingData ao_id="31" conf="1" id="3" project_name="2" prop_ids="537,540,599,605,845" rec_id="378" sev="0" site_id="6" vtype="5"/>
+	</FindingDataPool>
+	<Bundle exclusion="false" name="XSS" version="8.0.0">
+		<Finding data_id="1" trace="7,3.,4."/>
+		<Finding data_id="2" trace="8,1.,5."/>
+		<Finding data_id="3" trace="9,2.,6."/>
+		<Properties>
+			<Property name="description" value="antony please fix"/>
+		</Properties>
+	</Bundle>
+	<FindingModifications exclusion="false" version="8.0.0">
+	</FindingModifications>
+	<Findings exclusion="false" version="8.0.0">
+	</Findings>
+</Application>

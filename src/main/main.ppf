@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Project fallback_default_config_name="Configuration 1" ltd_name="java" name="main" version="10.0.7" web_context_root_path=".\webapp">
+	<Configuration class_path="..\..\Log4AltoroJ.jar;.\webapp\WEB-INF\lib\commons-codec-1.6.jar;.\webapp\WEB-INF\lib\commons-lang-2.5.jar" jdk_name="AdoptOpenJDK 11 64 bit" name="Configuration 1"/>
+	<Source exclude="false" path=".\java" web="false"/>
+	<Source exclude="false" path=".\webapp" web="true"/>
+	<ProjectScanSettings/>
+</Project>
