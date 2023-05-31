@@ -1,0 +1,26 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: jboss
+  name: jboss
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: jboss
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: jboss
+    spec:
+      containers:
+      - image: age68573/altoroj:replaceImageTag
+        name: eap74-openjdk17-openshift-rhel8
+        resources: {}
+      imagePullSecrets:
+      - name: registryauth
+status: {}
