@@ -126,7 +126,7 @@ java --version'''
     jdk 'java17'
   }
   environment {
-    IMAGE_VERSION = '3'
+    IMAGE_VERSION = '1'
     COVERITY_PROJECT = 'AltoroJ'
     COVERITY_STREAM = 'AltoroJ-1'
     DETECT_VERSION = 'v0.1'
