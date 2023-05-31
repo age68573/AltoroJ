@@ -3,8 +3,9 @@ kind: Service
 metadata:
   creationTimestamp: null
   labels:
-    app: jboss
-  name: jboss
+    app: altoroj
+  name: altoroj
+  namespace: altoroj
 spec:
   ports:
   - name: http
@@ -16,7 +17,7 @@ spec:
     protocol: TCP
     targetPort: 9990
   selector:
-    app: jboss
+    app: altoroj
   type: NodePort
 status:
   loadBalancer: {}

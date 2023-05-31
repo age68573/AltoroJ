@@ -3,19 +3,20 @@ kind: Deployment
 metadata:
   creationTimestamp: null
   labels:
-    app: jboss
-  name: jboss
+    app: altoroj
+  name: altoroj
+  namespace: altoroj
 spec:
   replicas: 2
   selector:
     matchLabels:
-      app: jboss
+      app: altoroj
   strategy: {}
   template:
     metadata:
       creationTimestamp: null
       labels:
-        app: jboss
+        app: altoroj
     spec:
       containers:
       - image: age68573/altoroj:replaceImageTag
