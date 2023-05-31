@@ -20,7 +20,7 @@ spec:
     spec:
       containers:
       - image: age68573/altoroj:replaceImageTag
-        name: eap74-openjdk17-openshift-rhel8
+        name: eap74
         resources: {}
       imagePullSecrets:
       - name: registryauth
