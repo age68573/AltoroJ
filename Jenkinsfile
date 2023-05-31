@@ -78,7 +78,7 @@ java --version'''
 
     stage('Docker Build') {
       steps {
-        sh "docker build -t age68573/AltoroJ:${IMAGE_VERSION} ."
+        sh "docker build -t age68573/altoroj:${IMAGE_VERSION} ."
       }
     }
 
@@ -87,7 +87,7 @@ java --version'''
         script {
           withCredentials([string(credentialsId: 'dockerhub', variable: 'dockerhub')]) {
             sh "docker login -u age68573 -p ${dockerhub}"
-            sh "docker push age68573/AltoroJ:${IMAGE_VERSION}"
+            sh "docker push age68573/altoroj:${IMAGE_VERSION}"
           }
         }
 
