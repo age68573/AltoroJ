@@ -113,7 +113,11 @@ java --version'''
 
       }
     }
-
+    stage('cypress') {
+      steps {
+        sh ' docker run  -v $PWD:/e2e -w /e2e  cypress/included --spec ./cypress/e2e/spec.cy.js'
+      }
+    }
     stage('Seeker') {
       steps {
         synopsysSeeker(projectKey: 'altoroj_eap74', reportFormat: 'pdf', condition: 'NONE')
