@@ -39,6 +39,8 @@ java --version'''
                 cov-analyze --dir idir --all --disable-spotbugs --webapp-security -j auto --enable-audit-mode
                 echo ${COV_URL}
                 cov-commit-defects --dir ${cov-idir} --url ${COV_URL} --stream ${COV_STREAM} --auth-key-file ${COV_AUTH_KEY_PATH}
+yq -i \'.project|=strenv(COVERITY_PROJECT)\' report.yaml
+                /opt/cov-reports-2023.3.0/bin/cov-generate-security-report report.yaml --auth-key-file ${COV_AUTH_KEY_PATH} --output report.pdf
               '''
             }
 
@@ -113,36 +115,34 @@ java --version'''
 
       }
     }
+
     stage('Mail Notification') {
-          steps {
-            echo 'Sending Mail'
-            mail bcc: '',
-            body: "繼續流程請點擊: ${BUILD_URL}input",
-            cc: '',
-            from: '',
-            replyTo: '',
-            subject: 'Jenkins Job',
-            to: 'age68573@gmail.com'
-          }
-        }
-    stage('continue?') {
-        input {
-            message "Should we continue?"
-            ok "Yes, we should."
-            submitter "jeremy"
-            parameters {
-                string(name: 'PERSON', defaultValue: 'approval', description: '繼續流程嗎?')
-            }
-        }
-        steps {
-            echo "${PERSON} 同意繼續流程"
-        }
+      steps {
+        echo 'Sending Mail'
+        mail(body: "繼續流程請點擊: ${BUILD_URL}input", subject: 'Jenkins Job', to: 'age68573@gmail.com')
+      }
     }
+
+    stage('continue?') {
+      input {
+        message 'Should we continue?'
+        id 'Yes, we should.'
+        submitter 'jeremy'
+        parameters {
+          string(name: 'PERSON', defaultValue: 'approval', description: '繼續流程嗎?')
+        }
+      }
+      steps {
+        echo "${PERSON} 同意繼續流程"
+      }
+    }
+
     stage('cypress') {
       steps {
         sh ' docker run  -v $PWD:/e2e -w /e2e  cypress/included --spec ./cypress/e2e/spec.cy.js'
       }
     }
+
     stage('Seeker') {
       steps {
         synopsysSeeker(projectKey: 'altoroj_eap74', reportFormat: 'pdf', condition: 'NONE')
