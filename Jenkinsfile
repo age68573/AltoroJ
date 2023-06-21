@@ -126,7 +126,7 @@ yq -i \'.project|=strenv(COVERITY_PROJECT)\' report.yaml
     stage('continue?') {
       input {
         message 'Should we continue?'
-        id 'Yes, we should.'
+        ok 'Yes, we should.'
         submitter 'jeremy'
         parameters {
           string(name: 'PERSON', defaultValue: 'approval', description: '繼續流程嗎?')
