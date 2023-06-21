@@ -19,7 +19,7 @@ spec:
         app: altoroj
     spec:
       containers:
-      - image: age68573/altoroj:replaceImageTag
+      - image: age68573/altoroj:2
         name: eap74
         resources: {}
       imagePullSecrets:
