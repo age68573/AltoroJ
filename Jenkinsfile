@@ -120,7 +120,7 @@ yq -i \'.project|=strenv(COVERITY_PROJECT)\' report.yaml
       steps {
         echo 'Sending Mail'
         
-        emailext attachmentsPattern: './report.pdf', body: '繼續流程請點擊: ${BUILD_URL}input', subject: 'Jenkins Job', to: 'age68573@gmail.com'
+        emailext attachmentsPattern: 'report.pdf', body: '繼續流程請點擊: ${BUILD_URL}input', subject: 'Jenkins Job', to: 'age68573@gmail.com'
       }
     }
 
